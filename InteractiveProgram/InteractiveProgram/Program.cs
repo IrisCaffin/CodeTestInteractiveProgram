@@ -10,28 +10,32 @@ namespace InteractiveProgram
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter an integer: ");
-
-            string line = Console.ReadLine();
-
             int value;
-            Int32.TryParse(line, out value);
+            bool keepGoing = true;
 
-            bool isUserWrong = true;
-
-            while(isUserWrong)
+            while(keepGoing)
             {
-                if (value < 10)
+                // Prompt the user to enter an integer
+                Console.WriteLine("Enter an integer: ");
+
+                string line = Console.ReadLine();
+
+                Int32.TryParse(line, out value);
+
+                if (value >= 10)
                 {
-                    Console.WriteLine("This number is too small. Enter another integer: ");
+                    keepGoing = false;
+                    Console.WriteLine("This number is big enough.");
                 }
-
-                isUserWrong = false;
-
-
                 else
                 {
-                    Console.WriteLine("This number is big enough");
+                    Int32.TryParse(line, out value);
+
+                    if(value <= 10)
+                    {
+                        Console.WriteLine("The number is too small. Press enter to try again: ");
+                    }
+                    
                 }
 
                 Console.ReadLine();
