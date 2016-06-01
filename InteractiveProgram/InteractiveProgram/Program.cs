@@ -17,16 +17,26 @@ namespace InteractiveProgram
             int value;
             Int32.TryParse(line, out value);
 
-            if (value < 10)
-            {
-                Console.WriteLine("This number is too small.");
-            }
-            else
-            {
-                Console.WriteLine("This number is big enough");
-            }
+            bool isUserWrong = true;
 
-            Console.ReadLine();
+            while(isUserWrong)
+            {
+                if (value < 10)
+                {
+                    Console.WriteLine("This number is too small. Enter another integer: ");
+                }
+
+                isUserWrong = false;
+
+
+                else
+                {
+                    Console.WriteLine("This number is big enough");
+                }
+
+                Console.ReadLine();
+            }
+                
         }
     }
 }
