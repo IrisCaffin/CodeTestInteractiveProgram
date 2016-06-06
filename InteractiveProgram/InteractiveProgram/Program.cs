@@ -16,7 +16,7 @@ namespace InteractiveProgram
             while(keepGoing)
             {
                 // Prompt the user to enter an integer
-                Console.WriteLine("Enter an integer: ");
+                Console.WriteLine("Guess the right integer! Enter an integer: ");
 
                 string line = Console.ReadLine();
 
@@ -25,7 +25,7 @@ namespace InteractiveProgram
                 if (value >= 10)
                 {
                     keepGoing = false;
-                    Console.WriteLine("This number is big enough.");
+                    Console.WriteLine("This number is big enough. Press enter twice to exit.");
                 }
                 else
                 {
@@ -33,7 +33,7 @@ namespace InteractiveProgram
 
                     if(value <= 10)
                     {
-                        Console.WriteLine("The number is too small. Press enter to try again: ");
+                        Console.WriteLine("The number is too small. Press enter to try again.");
                     }
                     
                 }
